@@ -1,11 +1,21 @@
 # Shipping Mode
 
-Shipping Mode is the clean next-generation implementation of the planning
-plugin. It starts at version `1.0.0`, requires Node.js `20+`, and uses the
-namespaced Claude Code API `/<plugin-name>:<skill-name>`.
+Shipping Mode is the **canonical next-generation successor to `cmartinezs/claude-planning-with-ai`**, which is now deprecated and retained only for historical reference, provenance, and migration context.
 
-This repository intentionally does not contain the v3 planning template,
-legacy skills, v3 command scripts, or active/finished storage.
+New planning/change/release execution work, schemas, validators, runtime contracts, lifecycle execution behavior, and integrations belong in this repository. `claude-planning-with-ai` must not receive new feature development or new consumers.
+
+Shipping Mode starts at version `1.0.0`, requires Node.js `20+`, and uses the namespaced Claude Code API `/<plugin-name>:<skill-name>`.
+
+This repository intentionally does not contain the v3 planning template, legacy skills, v3 command scripts, or active/finished storage from the deprecated predecessor.
+
+## Lineage and migration rule
+
+- Predecessor: `cmartinezs/claude-planning-with-ai`
+- Predecessor status: `SUPERSEDED / DEPRECATED`
+- Canonical replacement: `cmartinezs/shipping-mode`
+- Legacy `.planning/` artifacts may remain in existing repositories as historical/embedded material.
+- If those artifacts require active maintenance, they should be reconciled or migrated toward Shipping Mode rather than extended as independent copies.
+- Compatibility or migration support should be implemented here without reactivating the predecessor repository.
 
 ## Bootstrap
 
@@ -14,10 +24,7 @@ npm ci
 npm run verify:next-generation
 ```
 
-The verification gate rebuilds validators and the production bundle in
-isolated temporary directories, compares them byte-for-byte with the committed
-artifacts, builds the test-only fault-injection bundle, and executes unit,
-concurrency, CLI, hard-crash, isolated-bundle, and regression suites.
+The verification gate rebuilds validators and the production bundle in isolated temporary directories, compares them byte-for-byte with the committed artifacts, builds the test-only fault-injection bundle, and executes unit, concurrency, CLI, hard-crash, isolated-bundle, and regression suites.
 
 ## Corte 0 status
 
