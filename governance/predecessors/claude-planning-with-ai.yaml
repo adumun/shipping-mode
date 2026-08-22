@@ -1,0 +1,18 @@
+schemaVersion: 1
+predecessor:
+  repository: cmartinezs/claude-planning-with-ai
+  status: DEPRECATED
+  lifecycleDisposition: SUPERSEDED
+relationship: supersedes
+successor:
+  repository: cmartinezs/shipping-mode
+migrationPolicy:
+  newConsumers: shipping-mode
+  newFeatures: shipping-mode
+  legacyArtifactsMayRemain: true
+  copyForwardWithoutReconciliation: false
+provenance:
+  retainedFor:
+    - historical_lineage
+    - migration_reference
+    - compatibility_analysis
